@@ -1,0 +1,56 @@
+﻿<?xml version="1.0"?>
+<Template originator   = "John"
+          created      = "2015/02/22"
+          lastModified = "2015/02/22">
+	
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>John Sample</_Name>
+		<_Category>C#/John Samples</_Category>
+		<Icon>md-project</Icon>
+		<LanguageName>C#</LanguageName>
+		<_Description>Creates a test project</_Description>
+	</TemplateConfiguration>
+	
+	<!-- Actions -->
+	<Actions>
+		<Open filename = "Main.cs"/>
+	</Actions>
+	
+	<!-- Template Content -->
+	<Combine name = "${ProjectName}" directory = ".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		
+		<Project name = "${ProjectName}" directory = ".">
+			<Options/>
+			<References>
+				<Reference type="Gac" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				<Reference type="Gac" refto="System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			</References>
+			
+			<Files>
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+				<FileTemplateReference TemplateID="OpenOfficeSpreadsheetDocHelper" name="SpreadsheetDocHelper.cs" />
+				<File name="Main.cs" AddStandardHeader="False">
+<![CDATA[// 
+using System;
+
+namespace john.Samples
+{
+
+	///<summary> Create and modify a spreadsheet document.</summary>
+	public class John : Activity
+	{
+		
+		public static void Main (string [] args)
+		{
+		}
+	}
+}]]>
+				</File>			
+			</Files>
+		</Project>
+	</Combine>
+</Template>
